@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+</head>
+<body>
+<h3>Please Enter your current Information</h3>
+ <h3> then Please Enter your New Information</h3>
+<form method="post" action="/update_restaurant">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Save"/>
+</form>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <title>Restaurant Master</title>
+</head>
+<style>
+  table, th, td {
+  border:1px solid black;
+  }
+
+
+</style>
+<body>
+
+<a href="/" class="button">Go to Restaurant Manager</a>
+<br>
+<a href="/order" class="button">Go to Order details</a>
+<br>
+<a href="/items" class="button">Go to Items</a>
+<h1>Allber Eats</h1>
+<table style="width:100%">
+    <tr>
+        <th>Restaurant Name</th>
+        <th>City</th>
+        <th>GSTIN</th>
+    </tr>
+
+    {% for i in RestaurantMaster %}
+    <tr>
+        <th>  {{ i.name }}</th>
+        <th>  {{ i.address }} </th>
+        <th>  {{ i.gstin }}</th>
+    </tr>
+    {% endfor %}
+</table>
+
+<form action="/insert_restaurant">
+    <input type="submit" value="Insert" />
+</form>
+
+<form action="/delete_restaurant">
+    <input type="submit" value="Delete" />
+</form>
+
+<form action="/update_restaurant">
+    <input type="submit" value="Update" />
+</form>
+
+</body>
+</html>

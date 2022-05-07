@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete</title>
+</head>
+<body>
+<h4>Please Write the exact name and GSIN to delete your restaurant.</h4>
+<h5>Address can be null</h5>
+<form method="post" action="/delete_restaurant">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Save"/>
+</form>
+</body>
+</html>

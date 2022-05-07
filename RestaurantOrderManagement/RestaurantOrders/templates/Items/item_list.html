@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Items</title>
+</head>
+<style>
+  table, th, td {
+  border:1px solid black;
+  }
+
+
+</style>
+<body>
+
+<a href="/" class="button">Go to Restaurant Manager</a>
+<br>
+<a href="/order" class="button">Go to Order details</a>
+<br>
+<a href="/items" class="button">Go to Items</a>
+<h1>Allber Eats</h1>
+<table style="width:100%">
+    <tr>
+        <th>Item Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Item Type</th>
+        <th>stock</th>
+    </tr>
+
+    {% for i in item_list %}
+    <tr>
+        <th>  {{ i.name }}</th>
+        <th>  {{ i.description }} </th>
+        <th>  {{ i.price }}</th>
+         <th>  {{ i.item_type }}</th>
+         <th>  {{ i.stock }}</th>
+    </tr>
+    {% endfor %}
+</table>
+
+<form action="/insert_items">
+    <input type="submit" value="Insert" />
+</form>
+
+</body>
+</html>

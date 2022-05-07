@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order status</title>
+</head>
+<body>
+<style>
+    table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+}
+</style>
+
+<a href="/" class="button">Go to Restaurant Manager</a>
+<br>
+<a href="/order" class="button">Go to Order details</a>
+<br>
+<a href="/items" class="button">Go to Items</a>
+
+<h1> Your Orders</h1>
+<table style="width:100%">
+    <tr>
+        <th>Customer ID</th>
+        <th>Customer Name</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Payment type</th>
+        <th>Order Type</th>
+        <th>Order Status</th>
+    </tr>
+
+    {% for i in order_list %}
+    <tr>
+         <th>  {{ i.ID }}</th>
+        <th>  {{ i.customer.name }}</th>
+         <th>  {{ i.customer.phone }}</th>
+         <th>  {{ i.customer.address }}</th>
+          <th>  {{ i.customer.ptype }}</th>
+        <th>  {{ i.ordertype }}</th>
+        <th>  {{ i.orderstatus }}</th>
+    </tr>
+    {% endfor %}
+</table>
+
+<form action="/insert_orders">
+    <input type="submit" value="Insert" />
+</form>
+
+<form action="/delete_orders">
+    <input type="submit" value="Delete" />
+</form>
+
+<form action="/update_orders">
+    <input type="submit" value="Update" />
+</form>
+</body>
+</html>
